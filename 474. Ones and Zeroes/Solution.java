@@ -10,7 +10,7 @@
 // https://leetcode.com/problems/ones-and-zeroes/description/
 
 public class Solution {
-    public static int findMaxForm(String[] strs, int m, int n) {
+    public int findMaxForm(String[] strs, int m, int n) {
         int[][] dp = new int[m + 1][n + 1];
         
         // Process each string
@@ -33,20 +33,22 @@ public class Solution {
     }
     
     public static void main(String[] args) {
+        Solution solution = new Solution();
+
         // Test case 1: ["10","0001","111001","1","0"], m=5, n=3
         int m = 5; int n = 3;
         String[] strs1 = {"10", "0001", "111001", "1", "0"};
-        System.out.println("Test 1: " + findMaxForm(strs1, m, n));
+        System.out.println("Test 1: " + solution.findMaxForm(strs1, m, n));
         
         // Test case 2: ["10","0","1"], m=1, n=1  
         m = 1; n = 1;
         String[] strs2 = {"10", "0", "1"};
-        System.out.println("Test 2: " + findMaxForm(strs2, m, n));
+        System.out.println("Test 2: " + solution.findMaxForm(strs2, m, n));
         
         // Test case 3: ["00011","00001","00001","0011","111"], m=8, n=5  
         m = 8; n = 5;
         String[] strs3 = {"00011","00001","00001","0011","111"};
-        System.out.println("Test 3: " + findMaxForm(strs3, m, n));
+        System.out.println("Test 3: " + solution.findMaxForm(strs3, m, n));
     }
 }
 
