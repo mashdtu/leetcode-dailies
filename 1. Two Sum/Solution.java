@@ -9,15 +9,16 @@
 
  */
 
-
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        // a + b = target
-        int a, b;
-        
-        for (int n : nums) {
-            
+        for (int i = 1; i < nums.length; i++) {
+            for (int j = i; j < nums.length; j++) {
+                if (nums[j] + nums[j-i] == target) {
+                    return new int[] {j, j-i};
+                }
+            }
         }
+        return new int[2];
     }
 
     public static void main(String[] args) {
@@ -40,5 +41,16 @@ class Solution {
         int target3 = 6;
         int[] result3 = solution.twoSum(nums3, target3);
         System.out.println("Example 3: [" + result3[0] + "," + result3[1] + "]"); // Expected: [0,1]
+        
+        // Example 4: nums = [-3,4,3,90], target = 0
+        int[] nums4 = {-3,4,3,90};
+        int target4 = 0;
+        int[] result4 = solution.twoSum(nums4, target4);
+        System.out.println("Example 4: [" + result4[0] + "," + result4[1] + "]"); // Expected: [0,2]
     }
 }
+
+// Runtime: 0 ms (top 0.00% LOL)
+// Time Complexity: O(N^2)
+// Memory: 46.20 MB (top 87.25%)
+// Space Complexity: 
